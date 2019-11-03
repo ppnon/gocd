@@ -1,0 +1,30 @@
+format_version: 3
+pipelines:
+  hello-pipeline-3:
+    group: Hello-Group
+    label_template: ${COUNT}
+    lock_behavior: none
+    display_order: -1
+    materials:
+      git:
+        git: https://github.com/ppnon/gocd
+        shallow_clone: false
+        auto_update: true
+        branch: master
+    stages:
+    - hello-stage-3:
+        fetch_materials: true
+        keep_artifacts: false
+        clean_workspace: false
+        approval:
+          type: success
+          allow_only_on_success: false
+        jobs:
+          hello-job-3:
+            timeout: 0
+            tasks:
+            - exec:
+                arguments:
+                - Hello World 3
+                command: echo
+                run_if: passed
