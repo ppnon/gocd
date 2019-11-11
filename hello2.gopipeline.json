@@ -57,7 +57,7 @@
               "timeout": -1.0,
               "arguments": [
                 "-c",
-                "date +\"%d/%m/%Y %H:%M:%S\""
+                "date +\"%Y/%m/%d %H:%M:%S\""
               ],
               "run_if": "passed",
               "type": "exec"
